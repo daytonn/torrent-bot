@@ -1,0 +1,7 @@
+#!/home/daytonn/.rbenv/shims/ruby
+
+$: << File.join(File.expand_path("..", File.dirname(__FILE__)), "lib")
+
+require "torrent-bot"
+
+TorrentBot.run
