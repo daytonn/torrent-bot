@@ -40,6 +40,18 @@ class TorrentBot::Processor::Movie < TorrentBot::Processor
   def self.rename_options_string
     rename_options.join(" ")
   end
+
+  def self.log_file_path
+    File.join(log_file_directory, log_filename)
+  end
+
+  def self.log_file_directory
+    File.join(TorrentBot.logs_root, "movies")
+  end
+
+  def self.log_filename
+    "movies.log"
+  end
 end
 
 TorrentBot.register_processor(TorrentBot::Processor::Movie)

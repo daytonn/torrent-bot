@@ -7,6 +7,10 @@ class TorrentBot
     File.join(File.expand_path(File.dirname(__FILE__)), "torrent-bot")
   end
 
+  def self.logs_root
+    File.join(File.expand_path("..", File.dirname(__FILE__)), "logs")
+  end
+
   def self.register_processor(processor)
     PROCESSORS << processor
   end
