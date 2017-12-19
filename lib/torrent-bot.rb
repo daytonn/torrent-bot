@@ -15,28 +15,8 @@ class TorrentBot
     PROCESSORS << processor
   end
 
-  def self.filebot_format
-    "{plex}"
-  end
-
-  def self.filebot_command
-    "/usr/bin/filebot"
-  end
-
-  def self.filebot_options
-    ["-rename", "-r", "-non-strict"]
-  end
-
-  def self.rename_options
-    []
-  end
-
   def self.run
     PROCESSORS.each { |processor| processor.process }
-  end
-
-  def self.video_extensions
-    ["mp4", "mkv"]
   end
 end
 
