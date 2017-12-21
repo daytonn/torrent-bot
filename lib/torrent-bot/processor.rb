@@ -5,7 +5,7 @@ class TorrentBot
   class Processor
     def self.process
       create_log!
-      write_log "\n\n--------------------#{Date.new}--------------------"
+      write_log "\n\n--------------------#{DateTime.new}--------------------"
       Dir.glob(video_file_pattern).map { |video_file| process_file(video_file) }
       write_log "-----------------------------------------------------"
     end
@@ -25,7 +25,7 @@ class TorrentBot
     end
 
     def self.video_extensions
-      ["mp4", "mkv"]
+      ["mp4", "mkv", "m4v"]
     end
 
     def self.video_file_pattern
